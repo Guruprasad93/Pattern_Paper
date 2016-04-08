@@ -13,10 +13,11 @@
 
 function PlotClusterinResult(X, IDX)
 
+    
     k=max(IDX);
 
     Colors=hsv(k);
-
+    figure,
     Legends = {};
     for i=0:k
         Xi=X(IDX==i,:);
@@ -34,6 +35,7 @@ function PlotClusterinResult(X, IDX)
             end
         end
         if ~isempty(Xi)
+            
             plot(Xi(:,1),Xi(:,2),Style,'MarkerSize',MarkerSize,'Color',Color);
         end
         hold on;
